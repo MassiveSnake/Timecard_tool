@@ -1,11 +1,9 @@
-from PyQt5.QtWidgets import QMainWindow, QHeaderView, QDialog, QMessageBox
-from PyQt5.QtCore import pyqtSignal, Qt, QSettings,  QTime, QDate, QSortFilterProxyModel
-from Hour_Registry_DH_dialog_QT import Ui_DailyHours_edit_dialog
+from PyQt5.QtWidgets import QDialog
+from PyQt5.QtCore import pyqtSignal, Qt, QTime, QDate
+from QT_Files.Hour_Registry_DH_dialog_QT import Ui_DailyHours_edit_dialog
 from Hour_Registry_SQL import SQL_Database
 from Hour_Registry_get_db import Get_db
-import pandas as pd
-from datetime import datetime, date, timedelta
-
+from datetime import datetime
 
 
 class DailyHours_edit_dialog(QDialog, Ui_DailyHours_edit_dialog):

@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QMainWindow, QHeaderView, QDialog
-from PyQt5.QtCore import pyqtSignal, Qt, QSettings,  QTime, QDate, QSortFilterProxyModel
-from Hour_Registry_PI_dialog_QT import Ui_ProjectInput_edit_dialog
+from PyQt5.QtWidgets import QDialog
+from PyQt5.QtCore import pyqtSignal
+from QT_Files.Hour_Registry_PI_dialog_QT import Ui_ProjectInput_edit_dialog
 from Hour_Registry_SQL import SQL_Database
 from Hour_Registry_get_db import Get_db
 

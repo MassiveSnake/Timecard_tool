@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QMainWindow, QHeaderView
-from PyQt5.QtCore import Qt, QSettings,  QTime, QDate, QSortFilterProxyModel
+from PyQt5.QtCore import Qt, QTime, QDate, QSortFilterProxyModel
 from PyQt5.QtGui import QBrush, QColor
-from Hour_Registry_QT import Ui_MainWindow
+from QT_Files.Hour_Registry_QT import Ui_MainWindow
 from Hour_Registry_Table_Populate import DataFrameModel
 from Hour_Registry_SQL import SQL_Database
 from Hour_Registry_get_db import Get_db
