@@ -61,7 +61,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         self.combobox_list_projects = [self.comboBox_ProjectInput_project_select,
                               self.comboBox_DailyHours_project_select]
 
-        self.hour_database = "Hour_Database.db"
+        self.hour_database = "Hour_Database_BFS.db"
         self.populate_widgets()
 
     def populate_widgets(self):

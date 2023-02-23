@@ -3,7 +3,7 @@ import pandas as pd
 
 class Get_db:
     def __init__(self):
-        self.hour_database = "Hour_Database.db"
+        self.hour_database = "Hour_Database_BFS.db"
 
     def get_project_db(self, columns):
         """

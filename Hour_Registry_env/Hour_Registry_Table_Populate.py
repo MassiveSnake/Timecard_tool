@@ -13,7 +13,7 @@ class DataFrameModel(QtCore.QAbstractTableModel):
     def __init__(self, df=pd.DataFrame(), parent=None):
         super(DataFrameModel, self).__init__(parent)
         self._dataframe = df
-        self.hour_database = "Hour_Database.db"
+        self.hour_database = "Hour_Database_BFS.db"
         self.colors = dict()
 
 

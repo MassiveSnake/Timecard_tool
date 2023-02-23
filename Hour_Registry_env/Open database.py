@@ -2,7 +2,7 @@
 import sqlite3
 
 # creating file path
-dbfile = 'C:\\Users\\stamb3257\\PYTHON_Projects\\Uren_Excel_automatisering\\Hour_Database.db'
+dbfile = 'C:\\Users\\stamb3257\\PYTHON_Projects\\Uren_Excel_automatisering\\Hour_Database_BFS.db'
 # Create a SQL connection to our SQLite database
 con = sqlite3.connect(dbfile)
 
