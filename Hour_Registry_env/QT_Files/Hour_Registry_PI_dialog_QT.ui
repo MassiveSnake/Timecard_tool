@@ -825,7 +825,7 @@ QPushButton::hover{
   </layout>
  </widget>
  <resources>
-  <include location="resource_file.qrc"/>
+  <include location="../resource_file.qrc"/>
  </resources>
  <connections>
   <connection>

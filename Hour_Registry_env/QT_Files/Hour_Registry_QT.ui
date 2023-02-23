@@ -3210,7 +3210,7 @@ border-color: rgb(220, 247, 255);
   </action>
  </widget>
  <resources>
-  <include location="resource_file.qrc"/>
+  <include location="../resource_file.qrc"/>
  </resources>
  <connections>
   <connection>
