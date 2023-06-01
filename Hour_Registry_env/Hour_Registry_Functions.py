@@ -46,7 +46,7 @@ pd.set_option('display.max_columns', 10)
 # TODO: expand total plot with Company filter, project filter
 # Dropdown: Oracle Task name, taskname, Project, Client
 # Harder than expected, Total db is stored as project ID. Hard to distill task/project/ect.
-
+# TODO: tight_layout fix
 def update_table(table, df):
     """
     Called from:
