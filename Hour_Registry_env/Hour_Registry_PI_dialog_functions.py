@@ -5,45 +5,34 @@ from Hour_Registry_SQL import SQL_Database
 from Hour_Registry_get_db import Get_db
 
 
-
 class ProjectInput_edit_dialog(QDialog, Ui_ProjectInput_edit_dialog):
-
     window_closed = pyqtSignal()
 
-    def __init__(self, project_id, sql_database, columns, parent=None):
+    def __init__(self, project_name: object, sql_database: object, columns: object, parent: object = None) -> object:
         super(ProjectInput_edit_dialog, self).__init__(parent)
         self.setupUi(self)
         self.project_input_columns = columns
-        self.project_id = project_id
-        self.hour_database = sql_database
+        self.project_name = project_name
+        self.local_database = sql_database
 
         self.pop_lineedits()
+    def name_number_changed(self):
+        name = self.lineEdit_project_name.text()
+        number = self.lineEdit_project_number.text()
+        oracle_name = number + " - " + name
+        self.lineEdit_Oracle_name.setText(oracle_name)
 
     def closeEvent(self, event):
         self.window_closed.emit()
         event.accept()
 
-    def billable_changed(self):
-        check = self.checkBox_billable.isChecked()
-        if check == True:
-            self.label_rate.setDisabled(False)
-            self.lineEdit_rate.setDisabled(False)
-            self.comboBox_currency.setDisabled(False)
-        else:
-            self.lineEdit_hourly_rate.setText("0")
-            self.label_hourly_rate.setDisabled(True)
-            self.lineEdit_hourly_rate.setDisabled(True)
-            self.comboBox_currency.setDisabled(True)
-
     def pop_lineedits(self):
-        df = Get_db.get_project_edit_db(self, self.project_id, self.project_input_columns)
+        df = Get_db.get_project_edit_db(self, self.local_database, self.project_name, self.project_input_columns)
 
         self.lineEdit_client.setText(df["Client"][0])
         self.lineEdit_project_name.setText(df["Project_Name"][0])
         self.lineEdit_project_number.setText(str(df["Project_Number"][0]))
-        self.lineEdit_task_number.setText(df["Task_Number"][0])
-        self.lineEdit_hourly_rate.setText(str(df["Hourly_Rate"][0]))
-        self.comboBox_currency.setCurrentText(df["Currency"][0])
+        self.lineEdit_Oracle_name.setText(str(df["Oracle_Name_pi"][0]))
         self.lineEdit_project_manager.setText(df["Project_Manager"][0])
         self.lineEdit_client_contact.setText(df["Client_Contact"][0])
         self.lineEdit_additional_information.setText(df["Additional_information_pi"][0])
@@ -52,36 +41,24 @@ class ProjectInput_edit_dialog(QDialog, Ui_ProjectInput_edit_dialog):
         """
         :return: Edit record equal to the LineEdit inputs
         """
-        db = SQL_Database(f"{self.hour_database}")
+        db = SQL_Database(f"{self.local_database}")
 
         sql = """Update projects set 
+        Client=?,
         Project_Number=?, 
-        Task_Number=?, 
-        Hourly_Rate=?, 
-        Currency=?, 
+        Oracle_Name_pi=? ,
         Project_Manager=?, 
         Client_Contact=?, 
         Additional_information_pi=? 
-        where id_pi = ?"""
-        parameters =(self.lineEdit_project_number.text(),
-                     self.lineEdit_task_number.text(),
-                     self.lineEdit_hourly_rate.text(),
-                     self.comboBox_currency.currentText(),
-                     self.lineEdit_project_manager.text(),
-                     self.lineEdit_client_contact.text(),
-                     self.lineEdit_additional_information.text(),
-                     self.project_id)
+        where Project_Name = ?"""
+        parameters = (self.lineEdit_client.text(),
+                      self.lineEdit_project_number.text(),
+                      self.lineEdit_Oracle_name.text(),
+                      self.lineEdit_project_manager.text(),
+                      self.lineEdit_client_contact.text(),
+                      self.lineEdit_additional_information.text(),
+                      self.project_name)
         db.execute(sql, parameters)
         db.commit()
         db.close
         self.close()
-
-
-
-
-
-
-
-
-
-

@@ -22,25 +22,21 @@
         <widget class="QPushButton" name="pushButton_date">
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	max-width: 215px;
 	background-color: rgb(202, 202, 202);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }
 QPushButton::hover{
-	max-width: 215px;
 	background-color: rgb(174, 174, 174);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }</string>
          </property>
@@ -59,13 +55,12 @@ QPushButton::hover{
          </property>
          <property name="styleSheet">
           <string notr="true">QDateEdit{
-background-color:beige;    
-border-style:outset;
+	background-color:beige;    
+	border-style:outset;
     border-width: 4px;
     border-radius: 10px;
-border-color: rgb(220, 247, 255);
+	border-color: rgb(220, 247, 255);
     font: 14px;
-
     padding: 6px;
 }
 
@@ -85,31 +80,27 @@ border-color: rgb(220, 247, 255);
         <widget class="QPushButton" name="pushButton_start">
          <property name="minimumSize">
           <size>
-           <width>87</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	max-width: 215px;
 	background-color: rgb(202, 202, 202);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }
 QPushButton::hover{
-	max-width: 215px;
 	background-color: rgb(174, 174, 174);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }</string>
          </property>
@@ -122,14 +113,12 @@ QPushButton::hover{
         <widget class="QTimeEdit" name="timeEdit_start">
          <property name="styleSheet">
           <string notr="true">QTimeEdit{
-background-color:beige;    
-border-style:outset;
-
+	background-color:beige;    
+	border-style:outset;
     border-width: 4px;
     border-radius: 10px;
-border-color: rgb(220, 247, 255);
+	border-color: rgb(220, 247, 255);
     font: 14px;
-
     padding: 6px;
 }</string>
          </property>
@@ -146,31 +135,27 @@ border-color: rgb(220, 247, 255);
         <widget class="QPushButton" name="pushButton_end">
          <property name="minimumSize">
           <size>
-           <width>87</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
-	max-width: 215px;
 	background-color: rgb(202, 202, 202);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }
 QPushButton::hover{
-	max-width: 215px;
 	background-color: rgb(174, 174, 174);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }</string>
          </property>
@@ -183,14 +168,12 @@ QPushButton::hover{
         <widget class="QTimeEdit" name="timeEdit_end">
          <property name="styleSheet">
           <string notr="true">QTimeEdit{
-background-color:beige;    
-border-style:outset;
-
+	background-color:beige;    
+	border-style:outset;
     border-width: 4px;
     border-radius: 10px;
-border-color: rgb(220, 247, 255);
+	border-color: rgb(220, 247, 255);
     font: 14px;
-
     padding: 6px;
 }</string>
          </property>
@@ -202,6 +185,9 @@ border-color: rgb(220, 247, 255);
       <layout class="QHBoxLayout" name="horizontalLayout_duration">
        <item>
         <widget class="QLabel" name="label_duration">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -210,26 +196,24 @@ border-color: rgb(220, 247, 255);
          </property>
          <property name="minimumSize">
           <size>
-           <width>87</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>237</width>
+           <width>16777215</width>
            <height>35</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">QLabel{
-	max-width: 215px;
 	background-color: rgb(202, 202, 202);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }</string>
          </property>
@@ -249,6 +233,9 @@ border-color: rgb(220, 247, 255);
        </item>
        <item>
         <widget class="QLabel" name="label_duration_time">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -271,7 +258,6 @@ border-color: rgb(220, 247, 255);
           <string notr="true">QLabel{
 background-color:beige;    
 border-style:outset;
-
     border-width: 2px;
     border-radius: 10px;
 border-color: rgb(220, 247, 255);
@@ -307,26 +293,24 @@ border-color: rgb(220, 247, 255);
          </property>
          <property name="minimumSize">
           <size>
-           <width>87</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>237</width>
+           <width>16777215</width>
            <height>35</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">QLabel{
-	max-width: 215px;
 	background-color: rgb(202, 202, 202);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }</string>
          </property>
@@ -383,6 +367,91 @@ QComboBox::hover{
       </layout>
      </item>
      <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_task">
+       <item>
+        <widget class="QLabel" name="label_task">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLabel{
+	background-color: rgb(202, 202, 202);
+    border-style: outset;
+    border-width: 5px;
+    border-radius: 10px;
+   border-color: rgb(220, 247, 255);
+    font: bold 11px;
+    padding: 6px;
+}</string>
+         </property>
+         <property name="text">
+          <string>Task</string>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBox_task_select">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QComboBox{
+    background-color: rgb(245, 245, 220);
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(255, 200, 200);
+    font: bold 11px;
+    padding: 6px;
+}
+QComboBox::hover{
+    background-color:rgb(234, 234, 210) ;
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: rgb(255, 200, 200);
+    font: bold 11px;
+    padding: 6px;
+}</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
       <layout class="QHBoxLayout" name="horizontalLayout_additional_information">
        <item>
         <widget class="QLabel" name="label_additional_information">
@@ -394,31 +463,29 @@ QComboBox::hover{
          </property>
          <property name="minimumSize">
           <size>
-           <width>87</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>237</width>
+           <width>16777215</width>
            <height>35</height>
           </size>
          </property>
          <property name="styleSheet">
           <string notr="true">QLabel{
-	max-width: 215px;
 	background-color: rgb(202, 202, 202);
     border-style: outset;
     border-width: 5px;
     border-radius: 10px;
    border-color: rgb(220, 247, 255);
     font: bold 11px;
-    min-width: 5em;
     padding: 6px;
 }</string>
          </property>
          <property name="text">
-          <string>Additional information</string>
+          <string>Comment</string>
          </property>
          <property name="scaledContents">
           <bool>false</bool>
@@ -445,6 +512,10 @@ QComboBox::hover{
            <height>0</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string>This comment will be added to the &quot;Day&quot; comment column in the Oracle export. 
+ Comments of similar Task Name and day will be concatenated. </string>
+         </property>
          <property name="styleSheet">
           <string notr="true">QLineEdit{
 background-color:beige;    
@@ -467,7 +538,7 @@ border-color: rgb(220, 247, 255);
         <widget class="QPushButton" name="pushButton_edit_table">
          <property name="minimumSize">
           <size>
-           <width>192</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
@@ -479,7 +550,6 @@ border-color: rgb(220, 247, 255);
     border-radius: 10px;
     border-color: rgb(255, 200, 200);
     font: bold 14px;
-    min-width: 10em;
     padding: 6px;
 }
 QPushButton::hover{
@@ -488,9 +558,7 @@ QPushButton::hover{
     border-width: 2px;
     border-radius: 10px;
     border-color:rgb(255, 144, 144);
-
     font: bold 14px;
-    min-width: 10em;
     padding: 6px;
 }</string>
          </property>
@@ -503,7 +571,7 @@ QPushButton::hover{
         <widget class="QPushButton" name="pushButton_cancel">
          <property name="minimumSize">
           <size>
-           <width>192</width>
+           <width>0</width>
            <height>0</height>
           </size>
          </property>
@@ -515,7 +583,6 @@ QPushButton::hover{
     border-radius: 10px;
     border-color: rgb(255, 200, 200);
     font: bold 14px;
-    min-width: 10em;
     padding: 6px;
 }
 QPushButton::hover{
@@ -524,9 +591,7 @@ QPushButton::hover{
     border-width: 2px;
     border-radius: 10px;
     border-color:rgb(255, 144, 144);
-
     font: bold 14px;
-    min-width: 10em;
     padding: 6px;
 }</string>
          </property>
@@ -623,11 +688,28 @@ QPushButton::hover{
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>comboBox_project_select</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>DailyHours_edit_dialog</receiver>
+   <slot>project_select_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>332</x>
+     <y>212</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>224</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>start_now()</slot>
   <slot>end_now()</slot>
   <slot>date_now()</slot>
   <slot>edit_daily()</slot>
+  <slot>project_select_changed()</slot>
  </slots>
 </ui>

@@ -6,10 +6,10 @@ block_cipher = None
 
 a = Analysis(
     ['Hour_Registry_Run.py'],
-    pathex=['C:\\Users\\stamb3257\\PYTHON_Projects\\arc-hours-registry-project\\virtual_env\\lib\\site-packages'],
+    pathex=['C:\\Users\\stamb3257\\PYTHON_Projects\\arc-hours-registry-project\\Hour_Registry_env\\virtual_env\\lib\\site-packages'],
     binaries=[],
-    datas=[],
-    hiddenimports=[],
+    datas=[( 'C:\\Users\\stamb3257\\PYTHON_Projects\\arc-hours-registry-project\\Hour_Registry_env\\Arcadis_logo.ico', '.')],
+    hiddenimports=['pandas', 'PyQt5', 'matplotlib', 'numpy'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -19,6 +19,7 @@ a = Analysis(
     cipher=block_cipher,
     noarchive=False,
 )
+a.datas += [('Arcadis_logo.ico' , 'C:\\Users\\stamb3257\\PYTHON_Projects\\arc-hours-registry-project\\Hour_Registry_env\\Arcadis_logo.ico', 'DATA')] 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
@@ -27,16 +28,12 @@ exe = EXE(
     [],
     exclude_binaries=True,
     name='Hour_Registry_Run',
-    debug=False,
+    debug=True,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
-    console=True,
-    disable_windowed_traceback=False,
-    argv_emulation=False,
-    target_arch=None,
-    codesign_identity=None,
-    entitlements_file=None,
+    console=False,
+    icon= 'C:\\Users\\stamb3257\\PYTHON_Projects\\arc-hours-registry-project\\Hour_Registry_env\\Arcadis_logo.ico',
 )
 coll = COLLECT(
     exe,

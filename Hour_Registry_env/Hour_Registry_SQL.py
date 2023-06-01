@@ -41,3 +41,7 @@ class SQL_Database:
     def query(self, sql, params=None):
         self.cursor.execute(sql, params or ())
         return self.fetchall()
+
+    @property
+    def conn(self):
+        return self._conn

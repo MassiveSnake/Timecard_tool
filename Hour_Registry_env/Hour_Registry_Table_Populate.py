@@ -1,9 +1,6 @@
 from PyQt5 import QtCore
 from PyQt5.QtWidgets import QHeaderView
-from Hour_Registry_SQL import SQL_Database
 from PyQt5.QtCore import Qt
-
-
 import pandas as pd
 
 class DataFrameModel(QtCore.QAbstractTableModel):
@@ -13,22 +10,8 @@ class DataFrameModel(QtCore.QAbstractTableModel):
     def __init__(self, df=pd.DataFrame(), parent=None):
         super(DataFrameModel, self).__init__(parent)
         self._dataframe = df
-        self.hour_database = "Hour_Database_BFS.db"
+
         self.colors = dict()
-
-
-        if df.columns[1] == "Client":
-            self.database = "projects"
-            self.id_key = "id_pi"
-        elif df.columns[1] == "Start":
-            self.database = "daily"
-            self.id_key = "id_dh"
-        elif df.columns[1] == "Duration":
-            self.database = "daily_sum"
-            self.id_key = "id_sum_dh"
-
-
-
 
     def setDataFrame(self, dataframe):
         self.beginResetModel()
@@ -60,24 +43,6 @@ class DataFrameModel(QtCore.QAbstractTableModel):
         if parent.isValid():
             return 0
         return self._dataframe.columns.size
-
-    def setData(self, index, value, role):
-
-        if role == QtCore.Qt.EditRole:
-
-            self._dataframe.iloc[index.row(),index.column()] = value
-            column = self._dataframe.columns[index.column()]
-            row = index.row()+1
-
-            db = SQL_Database(f"{self.hour_database}")
-            sql = "UPDATE '" + self.database + "' SET '" + column + "' = '" + value + "' WHERE "+ self.id_key +" = '" + str(row) + "' "
-
-            db.execute(sql)
-            db.close()
-
-            return True
-        return False
-
 
     def data(self, index, role=None):
 
