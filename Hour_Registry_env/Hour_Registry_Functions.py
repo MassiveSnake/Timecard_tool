@@ -14,7 +14,7 @@ from Hour_Registry_DH_dialog_functions import DailyHours_edit_dialog
 from Hour_Registry_Mpl_Canvas import MplWidget
 from Hour_Registry_concatenate_tables import Concatentate_tables
 from Qrangeslider import QRangeSlider
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 import pandas as pd
 
 pd.options.mode.chained_assignment = None  # default='warn'
@@ -28,25 +28,14 @@ pd.set_option('display.max_columns', 10)
 # TODO: some error in total plot, when hours worked turn back to 0 (delete) values in plot remain
 # Problem arises because divide to 0 is prevented by df["total"] != 0
 
-# TODO: auto oracle name line might be irritating
-# Not possible to make into preference: Settings > bound to signal/slot on changed (parent)
-# TODO: import projects and task from other db (or just import old one and delete daily db)
-# Add menubar Settings option to Local database , select local DB button
-# Notification : a copy of the selected db will be added to: path
-# ! dangerours ! if db other format > hard to recognize error
-# Add menubar option : Delete daily hours
-# > Request confirmation
-# TODO: Reorder hours option, so that daily maximum is not exceeded
-# Add option in Settings (checkbox toggle)
-# Add contract hours label, line edit (Integer)
-# If contract hours is exceeded, split hours in day with most hours worked, at project with most hours
-# Create new line with Toil 1.0 time type
-# ! might be to complicated for python to do efficiently !
 # TODO: add secondary x axis to Total plot with week numbers
 # TODO: expand total plot with Company filter, project filter
 # Dropdown: Oracle Task name, taskname, Project, Client
 # Harder than expected, Total db is stored as project ID. Hard to distill task/project/ect.
 # TODO: tight_layout fix.
+# Hochladen oracle project database
+# General (all available projects) available
+
 def update_table(table, df):
     """
     Called from:
@@ -268,11 +257,11 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         for items in ProjectInput_lineEdits:
             items.clear()
 
-    def ProjectInput_name_number_changed(self):
-        name = self.lineEdit_ProjectInput_project_name.text()
-        number = self.lineEdit_ProjectInput_project_number.text()
-        oracle_name = number + " - " + name
-        self.lineEdit_ProjectInput_Oracle_name.setText(oracle_name)
+    # def ProjectInput_name_number_changed(self):
+    #     name = self.lineEdit_ProjectInput_project_name.text()
+    #     number = self.lineEdit_ProjectInput_project_number.text()
+    #     oracle_name = number + " - " + name
+    #     self.lineEdit_ProjectInput_Oracle_name.setText(oracle_name)
 
     def ProjectInput_button_clicked_add_project(self):
         """
@@ -429,11 +418,11 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         for items in TaskInput_lineEdits:
             items.clear()
 
-    def TaskInput_name_number_changed(self):
-        name = self.lineEdit_TaskInput_task_name.text()
-        number = self.lineEdit_TaskInput_task_number.text()
-        oracle_name = number + " - " + name
-        self.lineEdit_TaskInput_Oracle_name.setText(oracle_name)
+    # def TaskInput_name_number_changed(self):
+    #     name = self.lineEdit_TaskInput_task_name.text()
+    #     number = self.lineEdit_TaskInput_task_number.text()
+    #     oracle_name = number + " - " + name
+    #     self.lineEdit_TaskInput_Oracle_name.setText(oracle_name)
 
     def TaskInput_button_clicked_add_task(self):
         """
@@ -581,7 +570,9 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         :return:
         """
         start_now = QTime.currentTime()
+        self.timeEdit_DailyHours_end_time.setTime(start_now)
         self.timeEdit_DailyHours_start_time.setTime(start_now)
+
 
     def DailyHours_button_clicked_continue_time(self):
         """
@@ -604,7 +595,16 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         end_now = QTime.currentTime()
         self.timeEdit_DailyHours_end_time.setTime(end_now)
 
-    def DailyHours_calculate_duration(self):
+    def DailyHours_button_clicked_add_min(self):
+        end_time = self.timeEdit_DailyHours_end_time.time()
+        added_delta = end_time.addSecs(15 * 60)
+        self.timeEdit_DailyHours_end_time.setTime(added_delta)
+
+    def DailyHours_button_clicked_add_hour(self):
+        end_time = self.timeEdit_DailyHours_end_time.time()
+        added_delta = end_time.addSecs(60 * 60)
+        self.timeEdit_DailyHours_end_time.setTime(added_delta)
+    def DailyHours_start_end_time_Changed(self):
         """
         Read Start and End timeEdits
         Calculates duration with datetime
@@ -616,11 +616,18 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         time_format = '%H:%M'
         duration = str(datetime.strptime(end_time, time_format) - datetime.strptime(start_time, time_format))
         invalid_duration = duration.startswith("-")
-        if invalid_duration:
-            raise ValueError
-        else:
-            self.label_DailyHours_duration_time.setText(duration)
+        try:
+            if invalid_duration:
+                raise ValueError
+            else:
+                self.label_DailyHours_duration_time.setText(duration)
 
+        except ValueError:
+            errortype = "Negative Duration"
+            text = "Duration Time cannot be negative"
+            info = "Please correct the start or end time"
+            messagebox(errortype, text, info)
+            return None
     def DailyHours_combobox_changed_project_select(self):
         project = self.comboBox_DailyHours_project_select.currentText()
         if project == "":
@@ -639,7 +646,7 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         4) Gui is updated
         """
         try:
-            self.DailyHours_calculate_duration()
+            self.DailyHours_combobox_changed_project_select()
         except ValueError:
             errortype = "Negative Duration"
             text = "Duration Time cannot be negative"
@@ -663,6 +670,22 @@ class MyMainWindow(QMainWindow, Ui_MainWindow):
         #df_p.loc[df_p["Project_Name"] == project, "Oracle_Name_pi"].iloc[0],
         #df_t.loc[df_t["Task_Name"] == task, "Oracle_Name_ti"].iloc[0],
         df_new_row = pd.DataFrame([new_row], columns=self.daily_hours_columns)
+
+
+        if df_new_row["Date"][0] in df["Date"].values:
+            df_date = df[df["Date"]==df_new_row["Date"][0]]
+            while df_new_row["Start"][0] in df_date["Start"].values:
+                df_start = df_date[df_date["Start"]==df_new_row["Start"][0]]
+                if df_new_row["End"][0] in df_start["End"].values:
+                    delta = timedelta(minutes=1)
+                    start_time = datetime.strptime(df_new_row["Start"][0], "%H:%M")
+                    end_time = datetime.strptime(df_new_row["End"][0], "%H:%M")
+                    new_start_time = start_time+ delta
+                    new_end_time = end_time + delta
+                    df_new_row["Start"][0] = new_start_time.time().strftime('%H:%M')
+                    df_new_row["End"][0] = new_end_time.time().strftime('%H:%M')
+
+
         df_daily_hours = pd.concat([df, df_new_row])
         df_daily_hours.reset_index(drop=True, inplace=True)
         db = SQL_Database(f"{self.local_database}")

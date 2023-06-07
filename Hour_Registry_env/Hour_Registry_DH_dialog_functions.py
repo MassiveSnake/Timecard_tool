@@ -30,8 +30,8 @@ class DailyHours_edit_dialog(QDialog, Ui_DailyHours_edit_dialog):
     def pop_lineedits(self, date, start, end):
         df = Get_db.get_daily_edit_db(self, self.local_database, date, start, end, self.daily_hours_columns)
         self.dateEdit.setDate(QDate.fromString(df["Date"][0], 'yyyy-MM-dd'))
-        self.timeEdit_start.setTime(QTime.fromString(df["Start"][0]))
         self.timeEdit_end.setTime(QTime.fromString(df["End"][0]))
+        self.timeEdit_start.setTime(QTime.fromString(df["Start"][0]))
         self.label_duration_time.setText(df["Duration"][0])
         self.comboBox_project_select.setCurrentText(df["Project_Name"][0])
         self.comboBox_task_select.setCurrentText(df["Task_Name"][0])
@@ -43,11 +43,22 @@ class DailyHours_edit_dialog(QDialog, Ui_DailyHours_edit_dialog):
 
     def start_now(self):
         start_now = QTime.currentTime()
+        self.timeEdit_end.setTime(end_now)
         self.timeEdit_start.setTime(start_now)
 
     def end_now(self):
         end_now = QTime.currentTime()
         self.timeEdit_end.setTime(end_now)
+
+    def add_min(self):
+        end_time = self.timeEdit_end.time()
+        added_delta = end_time.addSecs(15 * 60)
+        self.timeEdit_end.setTime(added_delta)
+
+    def add_hour(self):
+        end_time = self.timeEdit_end.time()
+        added_delta = end_time.addSecs(60 * 60)
+        self.timeEdit_end.setTime(added_delta)
 
     def duration(self):
         start_time = self.timeEdit_start.time().toString("hh:mm")
@@ -55,11 +66,17 @@ class DailyHours_edit_dialog(QDialog, Ui_DailyHours_edit_dialog):
         format = '%H:%M'
         duration = str(datetime.strptime(end_time, format) - datetime.strptime(start_time, format))
         invalid_duration = duration.startswith("-")
-        if  invalid_duration == True:
-            raise ValueError
-        else:
-            self.label_duration_time.setText(duration)
-
+        try:
+            if  invalid_duration == True:
+                raise ValueError
+            else:
+                self.label_duration_time.setText(duration)
+        except ValueError:
+            type = "Negative Duration"
+            text = "Duration Time cannot be negative"
+            info = "Please correct the start or end time"
+            self.messagebox(type, text, info)
+            return None
     def project_select_changed(self):
         project = self.comboBox_project_select.currentText()
         self.comboBox_task_select.clear()

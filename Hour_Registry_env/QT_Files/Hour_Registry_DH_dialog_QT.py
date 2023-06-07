@@ -14,11 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_DailyHours_edit_dialog(object):
     def setupUi(self, DailyHours_edit_dialog):
         DailyHours_edit_dialog.setObjectName("DailyHours_edit_dialog")
-        DailyHours_edit_dialog.resize(449, 375)
+        DailyHours_edit_dialog.resize(502, 417)
         self.gridLayout = QtWidgets.QGridLayout(DailyHours_edit_dialog)
         self.gridLayout.setObjectName("gridLayout")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
         self.horizontalLayout_date = QtWidgets.QHBoxLayout()
         self.horizontalLayout_date.setObjectName("horizontalLayout_date")
         self.pushButton_date = QtWidgets.QPushButton(DailyHours_edit_dialog)
@@ -59,7 +57,7 @@ class Ui_DailyHours_edit_dialog(object):
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setObjectName("dateEdit")
         self.horizontalLayout_date.addWidget(self.dateEdit)
-        self.verticalLayout.addLayout(self.horizontalLayout_date)
+        self.gridLayout.addLayout(self.horizontalLayout_date, 0, 0, 1, 2)
         self.horizontalLayout_start = QtWidgets.QHBoxLayout()
         self.horizontalLayout_start.setObjectName("horizontalLayout_start")
         self.pushButton_start = QtWidgets.QPushButton(DailyHours_edit_dialog)
@@ -97,7 +95,7 @@ class Ui_DailyHours_edit_dialog(object):
         self.timeEdit_start.setCalendarPopup(False)
         self.timeEdit_start.setObjectName("timeEdit_start")
         self.horizontalLayout_start.addWidget(self.timeEdit_start)
-        self.verticalLayout.addLayout(self.horizontalLayout_start)
+        self.gridLayout.addLayout(self.horizontalLayout_start, 1, 0, 1, 2)
         self.horizontalLayout_end = QtWidgets.QHBoxLayout()
         self.horizontalLayout_end.setObjectName("horizontalLayout_end")
         self.pushButton_end = QtWidgets.QPushButton(DailyHours_edit_dialog)
@@ -134,7 +132,78 @@ class Ui_DailyHours_edit_dialog(object):
 "}")
         self.timeEdit_end.setObjectName("timeEdit_end")
         self.horizontalLayout_end.addWidget(self.timeEdit_end)
-        self.verticalLayout.addLayout(self.horizontalLayout_end)
+        self.gridLayout.addLayout(self.horizontalLayout_end, 2, 0, 1, 2)
+        self.horizontalLayout_increment = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_increment.setObjectName("horizontalLayout_increment")
+        self.label_Increment = QtWidgets.QLabel(DailyHours_edit_dialog)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_Increment.sizePolicy().hasHeightForWidth())
+        self.label_Increment.setSizePolicy(sizePolicy)
+        self.label_Increment.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_Increment.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.label_Increment.setStyleSheet("QLabel{\n"
+"    background-color: rgb(202, 202, 202);\n"
+"    border-style: outset;\n"
+"    border-width: 5px;\n"
+"    border-radius: 10px;\n"
+"   border-color: rgb(220, 247, 255);\n"
+"    font: bold 11px;\n"
+"    padding: 6px;\n"
+"}")
+        self.label_Increment.setScaledContents(False)
+        self.label_Increment.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_Increment.setWordWrap(False)
+        self.label_Increment.setObjectName("label_Increment")
+        self.horizontalLayout_increment.addWidget(self.label_Increment)
+        self.pushButton_15min = QtWidgets.QPushButton(DailyHours_edit_dialog)
+        self.pushButton_15min.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_15min.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.pushButton_15min.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(220, 247, 255);\n"
+"    border-style: outset;\n"
+"    border-width: 5px;\n"
+"    border-radius: 10px;\n"
+"    border-color: rgb(255, 200, 200);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"    background-color:rgb(206, 232, 255) ;\n"
+"    border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color:rgb(255, 144, 144);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}")
+        self.pushButton_15min.setObjectName("pushButton_15min")
+        self.horizontalLayout_increment.addWidget(self.pushButton_15min)
+        self.pushButton_1h = QtWidgets.QPushButton(DailyHours_edit_dialog)
+        self.pushButton_1h.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_1h.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.pushButton_1h.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(220, 247, 255);\n"
+"    border-style: outset;\n"
+"    border-width: 5px;\n"
+"    border-radius: 10px;\n"
+"    border-color: rgb(255, 200, 200);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"    background-color:rgb(206, 232, 255) ;\n"
+"    border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color:rgb(255, 144, 144);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}")
+        self.pushButton_1h.setObjectName("pushButton_1h")
+        self.horizontalLayout_increment.addWidget(self.pushButton_1h)
+        self.gridLayout.addLayout(self.horizontalLayout_increment, 3, 0, 1, 2)
         self.horizontalLayout_duration = QtWidgets.QHBoxLayout()
         self.horizontalLayout_duration.setObjectName("horizontalLayout_duration")
         self.label_duration = QtWidgets.QLabel(DailyHours_edit_dialog)
@@ -184,9 +253,7 @@ class Ui_DailyHours_edit_dialog(object):
         self.label_duration_time.setWordWrap(False)
         self.label_duration_time.setObjectName("label_duration_time")
         self.horizontalLayout_duration.addWidget(self.label_duration_time)
-        self.verticalLayout.addLayout(self.horizontalLayout_duration)
-        self.horizontalLayout_project = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_project.setObjectName("horizontalLayout_project")
+        self.gridLayout.addLayout(self.horizontalLayout_duration, 4, 0, 1, 2)
         self.label_project = QtWidgets.QLabel(DailyHours_edit_dialog)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -208,7 +275,7 @@ class Ui_DailyHours_edit_dialog(object):
         self.label_project.setAlignment(QtCore.Qt.AlignCenter)
         self.label_project.setWordWrap(False)
         self.label_project.setObjectName("label_project")
-        self.horizontalLayout_project.addWidget(self.label_project)
+        self.gridLayout.addWidget(self.label_project, 5, 0, 1, 1)
         self.comboBox_project_select = QtWidgets.QComboBox(DailyHours_edit_dialog)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -235,8 +302,7 @@ class Ui_DailyHours_edit_dialog(object):
 "    padding: 6px;\n"
 "}")
         self.comboBox_project_select.setObjectName("comboBox_project_select")
-        self.horizontalLayout_project.addWidget(self.comboBox_project_select)
-        self.verticalLayout.addLayout(self.horizontalLayout_project)
+        self.gridLayout.addWidget(self.comboBox_project_select, 5, 1, 1, 1)
         self.horizontalLayout_task = QtWidgets.QHBoxLayout()
         self.horizontalLayout_task.setObjectName("horizontalLayout_task")
         self.label_task = QtWidgets.QLabel(DailyHours_edit_dialog)
@@ -288,7 +354,7 @@ class Ui_DailyHours_edit_dialog(object):
 "}")
         self.comboBox_task_select.setObjectName("comboBox_task_select")
         self.horizontalLayout_task.addWidget(self.comboBox_task_select)
-        self.verticalLayout.addLayout(self.horizontalLayout_task)
+        self.gridLayout.addLayout(self.horizontalLayout_task, 6, 0, 1, 2)
         self.horizontalLayout_additional_information = QtWidgets.QHBoxLayout()
         self.horizontalLayout_additional_information.setObjectName("horizontalLayout_additional_information")
         self.label_additional_information = QtWidgets.QLabel(DailyHours_edit_dialog)
@@ -332,7 +398,7 @@ class Ui_DailyHours_edit_dialog(object):
 "}")
         self.lineEdit_additional_information.setObjectName("lineEdit_additional_information")
         self.horizontalLayout_additional_information.addWidget(self.lineEdit_additional_information)
-        self.verticalLayout.addLayout(self.horizontalLayout_additional_information)
+        self.gridLayout.addLayout(self.horizontalLayout_additional_information, 7, 0, 1, 2)
         self.horizontalLayout_edit = QtWidgets.QHBoxLayout()
         self.horizontalLayout_edit.setObjectName("horizontalLayout_edit")
         self.pushButton_edit_table = QtWidgets.QPushButton(DailyHours_edit_dialog)
@@ -379,8 +445,7 @@ class Ui_DailyHours_edit_dialog(object):
 "}")
         self.pushButton_cancel.setObjectName("pushButton_cancel")
         self.horizontalLayout_edit.addWidget(self.pushButton_cancel)
-        self.verticalLayout.addLayout(self.horizontalLayout_edit)
-        self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
+        self.gridLayout.addLayout(self.horizontalLayout_edit, 8, 0, 1, 2)
 
         self.retranslateUi(DailyHours_edit_dialog)
         self.pushButton_date.clicked.connect(DailyHours_edit_dialog.date_now) # type: ignore
@@ -389,6 +454,10 @@ class Ui_DailyHours_edit_dialog(object):
         self.pushButton_cancel.clicked.connect(DailyHours_edit_dialog.close) # type: ignore
         self.pushButton_edit_table.clicked.connect(DailyHours_edit_dialog.edit_daily) # type: ignore
         self.comboBox_project_select.currentTextChanged['QString'].connect(DailyHours_edit_dialog.project_select_changed) # type: ignore
+        self.timeEdit_start.userTimeChanged['QTime'].connect(DailyHours_edit_dialog.duration) # type: ignore
+        self.timeEdit_end.userTimeChanged['QTime'].connect(DailyHours_edit_dialog.duration) # type: ignore
+        self.pushButton_15min.clicked.connect(DailyHours_edit_dialog.add_min) # type: ignore
+        self.pushButton_1h.clicked.connect(DailyHours_edit_dialog.add_hour) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(DailyHours_edit_dialog)
 
     def retranslateUi(self, DailyHours_edit_dialog):
@@ -397,6 +466,11 @@ class Ui_DailyHours_edit_dialog(object):
         self.pushButton_date.setText(_translate("DailyHours_edit_dialog", "Date"))
         self.pushButton_start.setText(_translate("DailyHours_edit_dialog", "Start "))
         self.pushButton_end.setText(_translate("DailyHours_edit_dialog", "End"))
+        self.label_Increment.setText(_translate("DailyHours_edit_dialog", "Add Increments"))
+        self.pushButton_15min.setToolTip(_translate("DailyHours_edit_dialog", "Click to get Current Time"))
+        self.pushButton_15min.setText(_translate("DailyHours_edit_dialog", "+15 min"))
+        self.pushButton_1h.setToolTip(_translate("DailyHours_edit_dialog", "Click to get Current Time"))
+        self.pushButton_1h.setText(_translate("DailyHours_edit_dialog", "+1 h"))
         self.label_duration.setText(_translate("DailyHours_edit_dialog", "Duration"))
         self.label_project.setText(_translate("DailyHours_edit_dialog", "Project"))
         self.label_task.setText(_translate("DailyHours_edit_dialog", "Task"))

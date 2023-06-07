@@ -1446,6 +1446,80 @@ class Ui_MainWindow(object):
         self.timeEdit_DailyHours_end_time.setObjectName("timeEdit_DailyHours_end_time")
         self.verticalLayout_end.addWidget(self.timeEdit_DailyHours_end_time)
         self.horizontalLayout_7.addLayout(self.verticalLayout_end)
+        self.verticalLayout_increment = QtWidgets.QVBoxLayout()
+        self.verticalLayout_increment.setObjectName("verticalLayout_increment")
+        self.label_DailyHours_Increment = QtWidgets.QLabel(self.frame_DailyHours_input)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_DailyHours_Increment.sizePolicy().hasHeightForWidth())
+        self.label_DailyHours_Increment.setSizePolicy(sizePolicy)
+        self.label_DailyHours_Increment.setMinimumSize(QtCore.QSize(0, 35))
+        self.label_DailyHours_Increment.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.label_DailyHours_Increment.setStyleSheet("QLabel{\n"
+"    background-color: rgb(206, 232, 255);\n"
+"    border-style: outset;\n"
+"    border-width: 5px;\n"
+"    border-radius: 10px;\n"
+"    border-color: rgb(255, 200, 200);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}")
+        self.label_DailyHours_Increment.setScaledContents(False)
+        self.label_DailyHours_Increment.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_DailyHours_Increment.setWordWrap(False)
+        self.label_DailyHours_Increment.setObjectName("label_DailyHours_Increment")
+        self.verticalLayout_increment.addWidget(self.label_DailyHours_Increment)
+        self.horizontalLayout_increment = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_increment.setObjectName("horizontalLayout_increment")
+        self.pushButton_DailyHours_15min = QtWidgets.QPushButton(self.frame_DailyHours_input)
+        self.pushButton_DailyHours_15min.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_DailyHours_15min.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.pushButton_DailyHours_15min.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(220, 247, 255);\n"
+"    border-style: outset;\n"
+"    border-width: 5px;\n"
+"    border-radius: 10px;\n"
+"    border-color: rgb(255, 200, 200);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"    background-color:rgb(206, 232, 255) ;\n"
+"    border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color:rgb(255, 144, 144);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}")
+        self.pushButton_DailyHours_15min.setObjectName("pushButton_DailyHours_15min")
+        self.horizontalLayout_increment.addWidget(self.pushButton_DailyHours_15min)
+        self.pushButton_DailyHours_1h = QtWidgets.QPushButton(self.frame_DailyHours_input)
+        self.pushButton_DailyHours_1h.setMinimumSize(QtCore.QSize(0, 35))
+        self.pushButton_DailyHours_1h.setMaximumSize(QtCore.QSize(16777215, 35))
+        self.pushButton_DailyHours_1h.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(220, 247, 255);\n"
+"    border-style: outset;\n"
+"    border-width: 5px;\n"
+"    border-radius: 10px;\n"
+"    border-color: rgb(255, 200, 200);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}\n"
+"QPushButton::hover{\n"
+"    background-color:rgb(206, 232, 255) ;\n"
+"    border-style: outset;\n"
+"    border-width: 2px;\n"
+"    border-radius: 10px;\n"
+"    border-color:rgb(255, 144, 144);\n"
+"    font: bold 14px;\n"
+"    padding: 6px;\n"
+"}")
+        self.pushButton_DailyHours_1h.setObjectName("pushButton_DailyHours_1h")
+        self.horizontalLayout_increment.addWidget(self.pushButton_DailyHours_1h)
+        self.verticalLayout_increment.addLayout(self.horizontalLayout_increment)
+        self.horizontalLayout_7.addLayout(self.verticalLayout_increment)
         self.verticalLayout_duration = QtWidgets.QVBoxLayout()
         self.verticalLayout_duration.setObjectName("verticalLayout_duration")
         self.label_DailyHours_duration_label = QtWidgets.QLabel(self.frame_DailyHours_input)
@@ -1764,9 +1838,9 @@ class Ui_MainWindow(object):
         self.label_WeeklyHours_project_id.setWordWrap(False)
         self.label_WeeklyHours_project_id.setObjectName("label_WeeklyHours_project_id")
         self.horizontalLayout_top_labels.addWidget(self.label_WeeklyHours_project_id)
-        self.label_WeeklyHours_project_task_number = QtWidgets.QLabel(self.frame_WeeklyHours_hours)
-        self.label_WeeklyHours_project_task_number.setMinimumSize(QtCore.QSize(100, 0))
-        self.label_WeeklyHours_project_task_number.setStyleSheet("QLabel{\n"
+        self.label_WeeklyHours_project_number = QtWidgets.QLabel(self.frame_WeeklyHours_hours)
+        self.label_WeeklyHours_project_number.setMinimumSize(QtCore.QSize(100, 0))
+        self.label_WeeklyHours_project_number.setStyleSheet("QLabel{\n"
 "    background-color: rgb(206, 232, 255);\n"
 "    border-style: outset;\n"
 "    border-width: 5px;\n"
@@ -1775,11 +1849,11 @@ class Ui_MainWindow(object):
 "    font: bold 14px;\n"
 "    padding: 6px;\n"
 "}")
-        self.label_WeeklyHours_project_task_number.setObjectName("label_WeeklyHours_project_task_number")
-        self.horizontalLayout_top_labels.addWidget(self.label_WeeklyHours_project_task_number)
-        self.label_WeeklyHours_project_task_number_2 = QtWidgets.QLabel(self.frame_WeeklyHours_hours)
-        self.label_WeeklyHours_project_task_number_2.setMinimumSize(QtCore.QSize(100, 0))
-        self.label_WeeklyHours_project_task_number_2.setStyleSheet("QLabel{\n"
+        self.label_WeeklyHours_project_number.setObjectName("label_WeeklyHours_project_number")
+        self.horizontalLayout_top_labels.addWidget(self.label_WeeklyHours_project_number)
+        self.label_WeeklyHours_task_number = QtWidgets.QLabel(self.frame_WeeklyHours_hours)
+        self.label_WeeklyHours_task_number.setMinimumSize(QtCore.QSize(100, 0))
+        self.label_WeeklyHours_task_number.setStyleSheet("QLabel{\n"
 "    background-color: rgb(206, 232, 255);\n"
 "    border-style: outset;\n"
 "    border-width: 5px;\n"
@@ -1788,8 +1862,8 @@ class Ui_MainWindow(object):
 "    font: bold 14px;\n"
 "    padding: 6px;\n"
 "}")
-        self.label_WeeklyHours_project_task_number_2.setObjectName("label_WeeklyHours_project_task_number_2")
-        self.horizontalLayout_top_labels.addWidget(self.label_WeeklyHours_project_task_number_2)
+        self.label_WeeklyHours_task_number.setObjectName("label_WeeklyHours_task_number")
+        self.horizontalLayout_top_labels.addWidget(self.label_WeeklyHours_task_number)
         self.label_WeeklyHours_monday_date = QtWidgets.QLabel(self.frame_WeeklyHours_hours)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
@@ -2620,10 +2694,6 @@ class Ui_MainWindow(object):
         self.lineEdit_TaskInput_search_table.textChanged['QString'].connect(MainWindow.TaskInput_changed_search_table) # type: ignore
         self.pushButton_TotalPlot_refresh.clicked.connect(MainWindow.TotalPlot_button_clicked_refresh) # type: ignore
         self.pushButton_TaskInput_clear_input.clicked.connect(MainWindow.TaskInput_button_clicked_clear_input) # type: ignore
-        self.lineEdit_ProjectInput_project_name.textChanged['QString'].connect(MainWindow.ProjectInput_name_number_changed) # type: ignore
-        self.lineEdit_ProjectInput_project_number.textChanged['QString'].connect(MainWindow.ProjectInput_name_number_changed) # type: ignore
-        self.lineEdit_TaskInput_task_name.textChanged['QString'].connect(MainWindow.TaskInput_name_number_changed) # type: ignore
-        self.lineEdit_TaskInput_task_number.textChanged['QString'].connect(MainWindow.TaskInput_name_number_changed) # type: ignore
         self.actionOpen_Settings.triggered.connect(MainWindow.Settings) # type: ignore
         self.actionDaily_Database.triggered.connect(MainWindow.Export_Daily_database) # type: ignore
         self.actionTotal_Database.triggered.connect(MainWindow.Export_Total_database) # type: ignore
@@ -2632,6 +2702,10 @@ class Ui_MainWindow(object):
         self.actionAbout_this_Tool.triggered.connect(MainWindow.aboutProgram) # type: ignore
         self.actionHow_to_use_this_tool.triggered.connect(MainWindow.HowToUse) # type: ignore
         self.actionDelete_Daily_Hours.triggered.connect(MainWindow.DeleteDailyHours) # type: ignore
+        self.pushButton_DailyHours_15min.clicked.connect(MainWindow.DailyHours_button_clicked_add_min) # type: ignore
+        self.pushButton_DailyHours_1h.clicked.connect(MainWindow.DailyHours_button_clicked_add_hour) # type: ignore
+        self.timeEdit_DailyHours_start_time.userTimeChanged['QTime'].connect(MainWindow.DailyHours_start_end_time_Changed) # type: ignore
+        self.timeEdit_DailyHours_end_time.userTimeChanged['QTime'].connect(MainWindow.DailyHours_start_end_time_Changed) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -2639,12 +2713,12 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.checkBox_ProjectInput_internal.setText(_translate("MainWindow", "Internal"))
         self.label_ProjectInput_client.setText(_translate("MainWindow", "Client"))
-        self.label_ProjectInput_project_name.setText(_translate("MainWindow", "Project Name"))
+        self.label_ProjectInput_project_name.setText(_translate("MainWindow", "* Project Name"))
         self.lineEdit_ProjectInput_project_name.setToolTip(_translate("MainWindow", "The Project Name can later not be changed due to its relation  \n"
 " with Task Names and Daily Hours. \n"
 " Be aware that special characters are replaced by underscores."))
         self.label_ProjectInput_project_number.setText(_translate("MainWindow", "Project Number"))
-        self.label_ProjectInput_Oracle_name.setText(_translate("MainWindow", "Oracle Name"))
+        self.label_ProjectInput_Oracle_name.setText(_translate("MainWindow", " * Oracle Name"))
         self.label_ProjectInput_project_manager.setText(_translate("MainWindow", "Project Manager"))
         self.label_ProjectInput_client_contact.setText(_translate("MainWindow", "Client Contact"))
         self.label_ProjectInput_additional_information.setText(_translate("MainWindow", "Additional Information"))
@@ -2656,11 +2730,11 @@ class Ui_MainWindow(object):
         self.pushButton_ProjectInput_edit_project.setText(_translate("MainWindow", "Edit project"))
         self.pushButton_ProjectInput_delete_project.setText(_translate("MainWindow", "Delete project"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.Project_Input), _translate("MainWindow", "Project Input"))
-        self.label_TaskInput_project_select.setText(_translate("MainWindow", "Project Name"))
+        self.label_TaskInput_project_select.setText(_translate("MainWindow", "* Project Name"))
         self.label_TaskInput_project_number.setText(_translate("MainWindow", "Project Number"))
-        self.label_TaskInput_task_name.setText(_translate("MainWindow", "Task Name"))
+        self.label_TaskInput_task_name.setText(_translate("MainWindow", " * Task Name"))
         self.label_TaskInput_task_number.setText(_translate("MainWindow", "Task Number"))
-        self.label_TaskInput_Oracle_name.setText(_translate("MainWindow", "Oracle Name"))
+        self.label_TaskInput_Oracle_name.setText(_translate("MainWindow", "* Oracle Name"))
         self.checkBox_TaskInput_billable.setText(_translate("MainWindow", "Billable"))
         self.label_TaskInput_hourly_rate.setText(_translate("MainWindow", "Hourly Rate"))
         self.label_TaskInput_additional_information.setText(_translate("MainWindow", "Oracle Comment"))
@@ -2693,6 +2767,11 @@ class Ui_MainWindow(object):
         self.pushButton_DailyHours_continue_time.setText(_translate("MainWindow", "Continue"))
         self.pushButton_DailyHours_end_time.setToolTip(_translate("MainWindow", "Click to get Current Time"))
         self.pushButton_DailyHours_end_time.setText(_translate("MainWindow", "End"))
+        self.label_DailyHours_Increment.setText(_translate("MainWindow", "Add Increments"))
+        self.pushButton_DailyHours_15min.setToolTip(_translate("MainWindow", "Click to get Current Time"))
+        self.pushButton_DailyHours_15min.setText(_translate("MainWindow", "+15 min"))
+        self.pushButton_DailyHours_1h.setToolTip(_translate("MainWindow", "Click to get Current Time"))
+        self.pushButton_DailyHours_1h.setText(_translate("MainWindow", "+1 h"))
         self.label_DailyHours_duration_label.setText(_translate("MainWindow", "Duration"))
         self.label_DailyHours_duration_time.setToolTip(_translate("MainWindow", "Calculated automatically from Start and End Time"))
         self.label_DailyHours_additional_information.setText(_translate("MainWindow", "Comment"))
@@ -2705,8 +2784,8 @@ class Ui_MainWindow(object):
         self.pushButton_WeeklyHours_week.setText(_translate("MainWindow", "Set to this Week"))
         self.label_WeeklyHours_number.setText(_translate("MainWindow", "#"))
         self.label_WeeklyHours_project_id.setText(_translate("MainWindow", "Project ID"))
-        self.label_WeeklyHours_project_task_number.setText(_translate("MainWindow", "Project #"))
-        self.label_WeeklyHours_project_task_number_2.setText(_translate("MainWindow", "Task #"))
+        self.label_WeeklyHours_project_number.setText(_translate("MainWindow", "Project #"))
+        self.label_WeeklyHours_task_number.setText(_translate("MainWindow", "Task #"))
         self.label_WeeklyHours_total_top.setText(_translate("MainWindow", "Total"))
         self.pushButton_WeeklyHours_export.setText(_translate("MainWindow", "Oracle Export"))
         self.label_WeeklyHours_total_hours.setText(_translate("MainWindow", "Total:"))

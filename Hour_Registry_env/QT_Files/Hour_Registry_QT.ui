@@ -237,7 +237,7 @@ QCheckBox::indicator::checked{
 }</string>
                      </property>
                      <property name="text">
-                      <string>Project Name</string>
+                      <string>* Project Name</string>
                      </property>
                      <property name="scaledContents">
                       <bool>false</bool>
@@ -394,7 +394,7 @@ QCheckBox::indicator::checked{
 }</string>
                      </property>
                      <property name="text">
-                      <string>Oracle Name</string>
+                      <string> * Oracle Name</string>
                      </property>
                      <property name="scaledContents">
                       <bool>false</bool>
@@ -980,7 +980,7 @@ QPushButton::hover{
 }</string>
                    </property>
                    <property name="text">
-                    <string>Project Name</string>
+                    <string>* Project Name</string>
                    </property>
                    <property name="scaledContents">
                     <bool>false</bool>
@@ -1070,7 +1070,7 @@ QPushButton::hover{
 }</string>
                    </property>
                    <property name="text">
-                    <string>Task Name</string>
+                    <string> * Task Name</string>
                    </property>
                    <property name="scaledContents">
                     <bool>false</bool>
@@ -1160,7 +1160,7 @@ QPushButton::hover{
 }</string>
                    </property>
                    <property name="text">
-                    <string>Oracle Name</string>
+                    <string>* Oracle Name</string>
                    </property>
                    <property name="scaledContents">
                     <bool>false</bool>
@@ -2448,6 +2448,143 @@ QPushButton::hover{
                 </layout>
                </item>
                <item>
+                <layout class="QVBoxLayout" name="verticalLayout_increment">
+                 <item>
+                  <widget class="QLabel" name="label_DailyHours_Increment">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>16777215</width>
+                     <height>35</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QLabel{
+	background-color: rgb(206, 232, 255);
+    border-style: outset;
+    border-width: 5px;
+    border-radius: 10px;
+    border-color: rgb(255, 200, 200);
+    font: bold 14px;
+    padding: 6px;
+}</string>
+                   </property>
+                   <property name="text">
+                    <string>Add Increments</string>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>false</bool>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_increment">
+                   <item>
+                    <widget class="QPushButton" name="pushButton_DailyHours_15min">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="toolTip">
+                      <string>Click to get Current Time</string>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+    background-color: rgb(220, 247, 255);
+    border-style: outset;
+    border-width: 5px;
+    border-radius: 10px;
+    border-color: rgb(255, 200, 200);
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton::hover{
+    background-color:rgb(206, 232, 255) ;
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color:rgb(255, 144, 144);
+    font: bold 14px;
+    padding: 6px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>+15 min</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton_DailyHours_1h">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>35</height>
+                      </size>
+                     </property>
+                     <property name="toolTip">
+                      <string>Click to get Current Time</string>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton{
+    background-color: rgb(220, 247, 255);
+    border-style: outset;
+    border-width: 5px;
+    border-radius: 10px;
+    border-color: rgb(255, 200, 200);
+    font: bold 14px;
+    padding: 6px;
+}
+QPushButton::hover{
+    background-color:rgb(206, 232, 255) ;
+	border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color:rgb(255, 144, 144);
+    font: bold 14px;
+    padding: 6px;
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>+1 h</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
                 <layout class="QVBoxLayout" name="verticalLayout_duration">
                  <item>
                   <widget class="QLabel" name="label_DailyHours_duration_label">
@@ -3013,7 +3150,7 @@ QPushButton::hover{
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_WeeklyHours_project_task_number">
+                <widget class="QLabel" name="label_WeeklyHours_project_number">
                  <property name="minimumSize">
                   <size>
                    <width>100</width>
@@ -3037,7 +3174,7 @@ QPushButton::hover{
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_WeeklyHours_project_task_number_2">
+                <widget class="QLabel" name="label_WeeklyHours_task_number">
                  <property name="minimumSize">
                   <size>
                    <width>100</width>
@@ -5031,70 +5168,6 @@ QPushButton::hover{
    </hints>
   </connection>
   <connection>
-   <sender>lineEdit_ProjectInput_project_name</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>ProjectInput_name_number_changed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>626</x>
-     <y>145</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>494</x>
-     <y>411</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_ProjectInput_project_number</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>ProjectInput_name_number_changed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>626</x>
-     <y>188</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>494</x>
-     <y>411</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_TaskInput_task_name</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>TaskInput_name_number_changed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>668</x>
-     <y>178</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>494</x>
-     <y>411</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>lineEdit_TaskInput_task_number</sender>
-   <signal>textChanged(QString)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>TaskInput_name_number_changed()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>668</x>
-     <y>219</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>494</x>
-     <y>411</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>actionOpen_Settings</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
@@ -5222,6 +5295,70 @@ QPushButton::hover{
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_DailyHours_15min</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>DailyHours_button_clicked_add_min()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>522</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_DailyHours_1h</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>DailyHours_button_clicked_add_hour()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>596</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeEdit_DailyHours_start_time</sender>
+   <signal>userTimeChanged(QTime)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>DailyHours_start_end_time_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>timeEdit_DailyHours_end_time</sender>
+   <signal>userTimeChanged(QTime)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>DailyHours_start_end_time_Changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>402</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>494</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>ProjectInput_button_clicked_clear_input()</slot>
@@ -5265,5 +5402,8 @@ QPushButton::hover{
   <slot>aboutProgram()</slot>
   <slot>HowToUse()</slot>
   <slot>DeleteDailyHours()</slot>
+  <slot>DailyHours_button_clicked_add_min()</slot>
+  <slot>DailyHours_button_clicked_add_hour()</slot>
+  <slot>DailyHours_start_end_time_Changed()</slot>
  </slots>
 </ui>
